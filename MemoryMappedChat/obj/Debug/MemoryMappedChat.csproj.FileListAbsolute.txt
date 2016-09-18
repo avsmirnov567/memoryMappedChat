@@ -1,0 +1,9 @@
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\bin\Debug\MemoryMappedChat.exe.config
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\bin\Debug\MemoryMappedChat.exe
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\bin\Debug\MemoryMappedChat.pdb
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.csprojResolveAssemblyReference.cache
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.ChatForm.resources
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.Properties.Resources.resources
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.csproj.GenerateResource.Cache
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.exe
+c:\users\justw\documents\visual studio 2015\Projects\MemoryMappedChat\MemoryMappedChat\obj\Debug\MemoryMappedChat.pdb
