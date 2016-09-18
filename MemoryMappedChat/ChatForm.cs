@@ -50,6 +50,7 @@ namespace MemoryMappedChat
             gettingWorker.DoWork += gettingWorker_DoWork;
             gettingWorker.RunWorkerAsync();
 
+            //adding the set of random names in order to avoid messing up with one more form
             string[] names = {"John", "Jack", "Steven", "Martha", "Maria", "Joshua", "Phillip"};
 
             Random rnd = new Random();
@@ -70,7 +71,7 @@ namespace MemoryMappedChat
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (messageCounter < kMessagesLimit)
+            if (messageCounter < kMessagesLimit) 
             {
                 string currentText = textBoxMessage.Text;
 
@@ -91,6 +92,7 @@ namespace MemoryMappedChat
 
                     using (var accessor = mmf.CreateViewAccessor())
                     {
+                        //counting the starting point, considering already existed messages                       
                         accessor.WriteArray(messageCounter * kMessageByteSize, buf, 0, buf.Count());
                     }
 
@@ -113,10 +115,12 @@ namespace MemoryMappedChat
             using (var accessor = mmf.CreateViewAccessor())
             {
                 int count = messageCounter;
-                do
+                do //while (!(buf.All(singleByte => singleByte == 0)) && count<kMessagesLimit)
                 {
                     accessor.ReadArray(count*kMessageByteSize, buf, 0, 1024);
-                    if (buf.All(singleByte => singleByte == 0))
+
+                    //if all bytes in array are zeros - break
+                    if (buf.All(singleByte => singleByte == 0)) 
                     {
                         break;
                     }
@@ -127,8 +131,9 @@ namespace MemoryMappedChat
                         message = (ChatMessage)bf.Deserialize(ms);
                     }
 
-                    string time = message.Time.ToShortTimeString();
+                    string time = message.Time.ToLongTimeString();
 
+                    //changing UI in main thread
                     textBoxChat.Invoke((Action)(() =>
                         {
                             if (count == 1)
